@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Período</title>
+    <link rel="stylesheet" href="css/cadastrarPeriodo.css">
+</head>
+<body>
+	<script>
+        window.onload = function() {
+            const params = new URLSearchParams(window.location.search);
+            const mensagem = params.get("mensagem");
+            if (mensagem) {
+                alert(mensagem);
+            }
+        }
+    </script>
+    <header>
+        <h1><a href="index.html">SIGAA</a></h1>
+        <h2>Cadastrar Período</h2>
+    </header>
+    <main>   
+        <form id="form-cadastrar-periodo" method="post" action="cadastrarPeriodo">
+            <div class="form-group">
+                <label for="ano">Ano:</label>
+                <input type="text" id="ano" name="ano" placeholder="Ex: 2024" required>
+            </div>
+            <div class="form-group">
+                <label for="semestre">Semestre:</label>
+                <select id="semestre" name="semestre" required>
+                    <option value="">Selecione</option>
+                    <option value="1">1º Semestre</option>
+                    <option value="2">2º Semestre</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="dataInicio">Data de Início:</label>
+                <input type="date" id="dataInicio" name="dataInicio" required>
+            </div>
+            <div class="form-group">
+                <label for="dataFim">Data de Fim:</label>
+                <input type="date" id="dataFim" name="dataFim" required>
+            </div>
+            <button type="submit">Cadastrar</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 SIGAA</p>
+    </footer>
+</body>
+</html>
